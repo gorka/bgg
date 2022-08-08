@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bgg</title>
+    <title>BGG</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,8 +12,14 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto mt-5">
+      <h1 class="text-3xl mb-5"><%= link_to "BGG", root_path %></h1>
+
       <%= yield %>
+
+      <footer class="mt-5 mb-10 pt-3 border-t border-black text-center">
+        This is just an experiment with <%= link_to "Ruby on Rails", "https://rubyonrails.org" %> and the <%= link_to "BGG API", "https://boardgamegeek.com/wiki/page/BGG_XML_API2" %>. You can <%= link_to "see the code", "https://github.com/gorka/bgg" %>.
+      </footer>
     </main>
   </body>
 </html>

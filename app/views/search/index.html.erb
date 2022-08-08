@@ -1,0 +1,17 @@
+<div>
+  <%= form_with url: "/search", method: :get, class: "flex space-x-4" do |form| %>
+    <%= form.text_field :query, value: @query, placeholder: "Type a game name here", class: "grow border border-black" %>
+    <%= form.select :type, options_for_select(@bgg_types, @type), {},  class: "border border-black" %>
+    <%= form.button "Search", class: "border border-black px-3" %>
+  <% end %>
+
+  <% if @query.present? %>
+    <div class="mt-5">
+      <ul>
+        <% @results.each do |result| %>
+          <li><%= result.name_with_year %></li>
+        <% end %>
+      <ul>
+    </div>
+  <% end %>
+</div>
